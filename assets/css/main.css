@@ -1,0 +1,246 @@
+/* BEGIN: from HTML5 Boilerplate */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+/* END: from HTML5 Boilerplate */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #779bdd;
+    --pink: #d46671;
+    --gray: #b8b8d3;
+}
+
+.embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    max-height: 54vh;
+    max-width: 96vh;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 16;
+}
+
+.embed-responsive::before {
+    display: block;
+    content: "";
+}
+
+.embed-responsive-16by9::before {
+    padding-top: 56.25%;
+}
+
+html {
+    background-color: #000;
+    color: var(--gray);
+    font-weight: 300;
+    line-height: 1.4;
+    font-family:
+        'brandon-grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Helvetica, Arial, sans-serif;
+    background-image: url('../img/bg.gif');
+}
+
+a {
+    color: var(--pink);
+}
+
+b, strong {
+    font-weight: 500;
+}
+
+header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+header img {
+    height: 12vw;
+    max-height: 6rem;
+}
+
+header .moon {
+    height: 18vw;
+}
+
+main {
+    position: relative;
+    z-index: 4;
+    width: 96vh;
+    max-width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+main::after {
+    display: block;
+    content: '';
+    min-height: 20rem;
+    height: 18.75vw;
+}
+
+.synopsis {
+    font-weight: 300;
+    color: var(--blue);
+    font-size: 1.6rem;
+    margin: 1.6rem 0 3.2rem;
+}
+
+.credits, .credits.two-up {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 2.4rem;
+}
+
+.credits--special {
+    font-size: 1.5em;
+    margin: 7.2rem 0;
+}
+
+.credits__section {
+    color: var(--blue);
+    font-size: 2.4rem;
+    font-family: 'house-script';
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 3.6rem 0 2.4rem;
+}
+
+.credits__subsection {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 2.4rem 0;
+}
+
+.credits__role, .credits__name {
+    display: block;
+}
+
+.credits__role {
+    font-size: 0.9em;
+    color: var(--pink);
+    text-shadow: 0 0 20px var(--pink);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    margin-bottom: 0.45em;
+}
+
+footer {
+    font-size: 0.95rem;
+    background: url('../img/city-new.png'), linear-gradient(rgba(0, 0, 0, 0), #000);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    min-height: 12rem;
+    height: 16vw;
+    width: 100%;
+    position: fixed;
+}
+
+.footer__fine-print {
+    width: 100%;
+    text-align: right;
+    padding: 1rem 2rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.footer__fine-print a {
+    display: inline-block;
+}
+
+.footer__fine-print a+a::before {
+    content: "\2022";
+    display: inline-block;
+    color: var(--gray);
+    margin: 0 1rem;
+}
+
+@media only screen and (min-width: 48rem) {
+    body {
+        font-size: 1.25rem;
+    }
+
+    .credits {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .credits.two-up {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .secondary-credits {
+        text-align: center;
+    }
+
+    .footer__fine-print {
+        width: auto;
+    }
+}
+
+@media only screen and (min-width: 100rem) {
+    header {
+        margin: 4rem 0;
+    }
+
+    header img {
+        max-height: 12rem;
+    }
+}
+
+@media only screen and (min-width: 100.1rem) {
+    main {
+        width: 80%;
+    }
+
+    .embed-responsive {
+        max-height: none;
+        max-width: 80%;
+    }
+}

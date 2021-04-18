@@ -1,0 +1,159 @@
+:root {
+    --floater-size: 6vw;
+    --floater-duration: 72s;
+}
+
+@keyframes move-background {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-8px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    75% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+.twinkle {
+    z-index: -1;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.twinkle::before {
+    content: '';
+    display: block;
+    width: 200%;
+    height: 100%;
+    background-image: url('../img/twinkling.png');
+    animation: move-background 45s linear infinite;
+}
+
+.floater {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: fixed;
+    display: none;
+    z-index: 6;
+    animation: rotate var(--floater-duration) linear infinite;
+}
+
+.floater:hover {
+    cursor: help;
+    animation-duration: 2s;
+}
+
+.floater--lg {
+    width: calc(var(--floater-size) * 1.25);
+    height: calc(var(--floater-size) * 1.25);
+    animation-duration: calc(var(--floater-duration) * 0.75);
+}
+
+.floater--md {
+    width: var(--floater-size);
+    height: var(--floater-size);
+    animation-duration: var(--floater-duration);
+}
+
+.floater--sm {
+    width: calc(var(--floater-size) * 2 / 3);
+    height: calc(var(--floater-size) * 2 / 3);
+    animation-duration: calc(var(--floater-duration) * 1.5);
+}
+
+.floater--banana-cat {
+    background-image: url('../img/floaters/banana-cat.png');
+    top: 47px;
+    left: 36px;
+}
+
+.floater--dog {
+    background-image: url('../img/floaters/dog.png');
+    top: 285px;
+    left: 81px;
+    animation-direction: reverse;
+    animation-delay: 1.25s;
+}
+
+.floater--evil {
+    background-image: url('../img/floaters/evil.png');
+    top: 271px;
+    right: 65px;
+}
+
+.floater--ghost {
+    background-image: url('../img/floaters/ghost.png');
+    top: 113px;
+    right: 209px;
+    animation-delay: 1s;
+}
+
+.floater--mermaid-cat {
+    background-image: url('../img/floaters/mermaid-cat.png');
+    top: 27px;
+    right: 58px;
+    animation-direction: reverse;
+}
+
+.floater--rats {
+    background-image: url('../img/floaters/rats.png');
+    bottom: 93px;
+    left: 69px;
+}
+
+.floater--scaredycat {
+    background-image: url('../img/floaters/scaredycat.png');
+    top: 406px;
+    left: 181px;
+    animation-delay: 2s;
+    animation-direction: reverse;
+}
+
+.floater--twins {
+    background-image: url('../img/floaters/twins.png');
+    top: 167px;
+    left: 190px;
+}
+
+.floater--woman {
+    background-image: url('../img/floaters/woman.png');
+    bottom: 83px;
+    right: 94px;
+    animation-delay: 1.5s;
+}
+
+@media screen and (min-width: 75rem) {
+    .floater {
+        display: block;
+    }
+}
